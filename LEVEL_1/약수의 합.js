@@ -1,14 +1,9 @@
 function solution15(n) {
   let answer = 0;
-  let num = 0;
-  while (1) {
-    if (n % num == 0) {
-      answer += num;
-    } else if (n < num) {
-      break;
-    } else if (n == 0) break;
-    num++;
+  for (let i = 1; i <= n; i++) {
+    if (n % i == 0) {
+      answer += i;
+    }
   }
   return answer;
 }
-console.log(solution15(12));
