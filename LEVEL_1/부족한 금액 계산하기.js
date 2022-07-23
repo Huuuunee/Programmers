@@ -1,11 +1,6 @@
 function solution(price, money, count) {
-  let answer = price;
-  let sum = 0;
-  for (let i = 0; i < count; i++) {
-    sum += price;
-    price += answer;
-  }
-  if (money - sum < 0) {
-    return (money - sum) * -1;
-  } else return (answer = 0);
+  let answer = Array.from(Array(count), (v, i) => price * (i + 1)).reduce(
+    (a, b) => a + b
+  );
+  return money - answer > 0 ? 0 : answer - money;
 }
